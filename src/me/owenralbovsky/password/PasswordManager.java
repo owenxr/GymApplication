@@ -11,6 +11,11 @@ import me.owenralbovsky.users.Person;
 
 public class PasswordManager {
 
+	/**
+	 * @param p for the Person to check the password for
+	 * @param password for the inputed password
+	 * @return Whether the inputed password is valid for the Person
+	 */
 	public static boolean checkPassword(Person p, String password)
 	{
 		if(equals(hashPassword(password), p.getPassword())) return true;
@@ -18,9 +23,14 @@ public class PasswordManager {
 		return false;
 	}
 	
+	/**
+	 * @param password for the password to be hashed
+	 * @return the hashed Password
+	 */
 	public static byte[] hashPassword(String password)
 	{
 		try {
+			//Taken from https://gist.github.com/jtan189/3804290 pbkdf2 method
 			SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
 			PBEKeySpec spec = new PBEKeySpec(password.toCharArray(), "$/nJ!".getBytes(), 10000, 512);
 			SecretKey key = skf.generateSecret(spec);
@@ -31,6 +41,11 @@ public class PasswordManager {
 		}
 	}
 	
+	/**
+	 * @param pass1 for password 1
+	 * @param pass2 for password 2
+	 * @return whether the two passwords are equal.
+	 */
 	private static boolean equals(byte[] pass1, byte[] pass2)
 	{
 		if(pass1.length != pass2.length) return false;

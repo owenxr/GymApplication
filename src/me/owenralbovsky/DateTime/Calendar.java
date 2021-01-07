@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 public class Calendar {
 
+	//Stores the days to act as a "Calendar"
 	public static ArrayList<Date> days = new ArrayList<>();
 	
+	//Checks to see if inputed date is a valid day in a calendar year.
+	//TODO add check to see if day is before today.
 	public boolean validDay(int year, int month, int day) {
 
 		if (day <= 0)

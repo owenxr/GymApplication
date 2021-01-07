@@ -9,6 +9,10 @@ public class ManagerActions {
 
 	static Scanner input = new Scanner(System.in);
 
+	/**
+	 * Functions as the "manager interaction" section.
+	 * Redirects user to a specific class based on selected action.
+	 */
 	public static void actions() {
 		
 		while(true)
@@ -17,6 +21,7 @@ public class ManagerActions {
 			String action = input.nextLine().trim().toLowerCase();
 			
 			switch(action) {
+			//Only a Manager can quit the app.
 			case "quit":
 				Main.quit = true;
 				return;

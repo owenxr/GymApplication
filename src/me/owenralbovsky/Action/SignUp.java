@@ -10,10 +10,11 @@ public class SignUp {
 
 	static Scanner input = new Scanner(System.in);
 	
+	/**
+	 * Prompts the user for the necessary information to create a customer.
+	 */
 	public static void signUp()
 	{
-		Scanner input = new Scanner(System.in);
-		
 		System.out.println("Please Enter Your Name (First Last): ");
 		String name = input.nextLine().trim();
 		

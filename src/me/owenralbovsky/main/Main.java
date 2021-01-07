@@ -19,6 +19,10 @@ public class Main {
 	public static Person loggedIn;
 	public static boolean quit = false;
 
+	/**
+	 * @param args
+	 * Gets current date and starts the app.
+	 */
 	public static void main(String[] args) {
 		LocalDateTime today = LocalDateTime.now();
 		Date.today = new Date(today.getMonthValue(), today.getDayOfMonth(), today.getYear());
@@ -27,6 +31,12 @@ public class Main {
 
 	}
 
+	
+	/**
+	 * Functions as a "start screen"
+	 * Creates an Admin if no Admin exists.
+	 * Here the user can select an action and then be directed to another class for selected action.
+	 */
 	public static void startApp() {
 
 		if (Admin.admins.size() <= 0)

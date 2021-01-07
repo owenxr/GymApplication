@@ -14,12 +14,23 @@ public class Admin extends Person {
 
 	public int level;
 
+	/**
+	 * @param name for the User's name
+	 * @param gender for the User's gender
+	 * @param email for the User's email
+	 * @param password for the User's password
+	 * @param dob for the User's Date of Birth
+	 * @param level for the User's priority level/rank
+	 */
 	public Admin(String name, String gender, String email, byte[] password, Date dob, int level) {
 		super(name, gender, email, password, dob);
 		this.level = level;
 		admins.add(this);
 	}
 
+	/**
+	 * Prompts the Admin for information to create another Admin
+	 */
 	public static void createAdmin()
 	{
 		

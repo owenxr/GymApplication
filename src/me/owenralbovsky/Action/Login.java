@@ -12,6 +12,9 @@ public class Login {
 
 	static Scanner input = new Scanner(System.in);
 
+	/**
+	 * Login function. Takes in an email and password and checks to see if current account exists and is valid.
+	 */
 	public static void login() {
 
 		boolean found = false;

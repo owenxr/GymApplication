@@ -11,6 +11,9 @@ public class CreateSession {
 	
 	static Scanner input = new Scanner(System.in);
 	
+	/**
+	 * Prompts the user for the necessary information to create a Session.
+	 */
 	public static void createSession() {
 		System.out.println("Give the name of the session: ");
 		String title = input.nextLine().trim().toUpperCase();
@@ -33,6 +36,8 @@ public class CreateSession {
 		Admin[] t = new Admin[Admin.admins.size()];
 		Admin trainer = null;
 		boolean found = false;
+		
+		//Must need a previously created and valid trainer to progress. Will prompt the user to find the right trainer.
 		while(!found) {
 			System.out.println("Possible Trainers:");
 			for(Admin a : Admin.admins) {
